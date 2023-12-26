@@ -2,16 +2,17 @@ package main
 
 import (
 	"fmt"
+	"net/http"
 	"os"
 )
 
 func main() {
 
-	// exibeIntroducao()
+	exibeIntroducao()
 
-	// exibeMenu()
-	_, idade := devolveNomeEIdade()
-	fmt.Println("e tenho", idade, "anos")
+	exibeMenu()
+	// _, idade := devolveNomeEIdade()
+	// fmt.Println("e tenho", idade, "anos")
 
 	comando := lerComando()
 
@@ -39,11 +40,12 @@ func main() {
 	}
 
 }
-func devolveNomeEIdade() (string, int) {
-	nome := "Lobo"
-	idade := 28
-	return nome, idade
-}
+
+// func devolveNomeEIdade() (string, int) {
+// 	nome := "Lobo"
+// 	idade := 28
+// 	return nome, idade
+// }
 
 func exibeIntroducao() {
 	nome := "Yuri"
@@ -69,7 +71,7 @@ func lerComando() int {
 
 func iniciarMonitoramento() {
 	fmt.Println("Monitorando..")
-	// site := "https://www.alura.com.br/"
-	// resp, _ := http.Get(site)
-
+	site := "https://www.alura.com.br/"
+	resp, _ := http.Get(site)
+	fmt.Println(resp)
 }
