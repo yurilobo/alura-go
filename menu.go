@@ -7,24 +7,26 @@ import (
 )
 
 func main() {
-
 	exibeIntroducao()
+	for {
 
-	exibeMenu()
+		exibeMenu()
 
-	comando := lerComando()
+		comando := lerComando()
 
-	switch comando {
-	case 1:
-		iniciarMonitoramento()
-	case 2:
-		fmt.Println("Exibindo logs")
-	case 0:
-		fmt.Println("Saindo do programa")
-		os.Exit(0)
-	default:
-		fmt.Println("Não conheco este comando")
-		os.Exit(-1)
+		switch comando {
+		case 1:
+			iniciarMonitoramento()
+		case 2:
+			fmt.Println("Exibindo logs")
+		case 0:
+			fmt.Println("Saindo do programa")
+			os.Exit(0)
+		default:
+			fmt.Println("Não conheco este comando")
+			os.Exit(-1)
+
+		}
 
 	}
 
@@ -54,7 +56,13 @@ func lerComando() int {
 
 func iniciarMonitoramento() {
 	fmt.Println("Monitorando..")
-	site := "https://random-status-code.herokuapp.com/"
+	var sites [4]string
+	sites[0] = "https://random-status-code.herokuapp.com/"
+	sites[1] = "https://www.alura.com.br"
+	sites[2] = "https://www.caelum.com.br"
+
+	fmt.Println(sites)
+	site := "https://www.alura.com.br/"
 	resp, _ := http.Get(site)
 
 	if resp.StatusCode == 200 {
@@ -64,3 +72,8 @@ func iniciarMonitoramento() {
 	}
 
 }
+
+// func exibeNomes() {
+// 	nomes := []string{"Douglas", "Daniel", "Yuri"}
+// 	fmt.Println(nomes)
+// }
