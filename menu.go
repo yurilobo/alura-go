@@ -3,14 +3,15 @@ package main
 import (
 	"fmt"
 	"os"
-	"reflect"
 )
 
 func main() {
 
-	exibeIntroducao()
+	// exibeIntroducao()
 
-	exibeMenu()
+	// exibeMenu()
+	_, idade := devolveNomeEIdade()
+	fmt.Println("e tenho", idade, "anos")
 
 	comando := lerComando()
 
@@ -25,7 +26,7 @@ func main() {
 	// }
 	switch comando {
 	case 1:
-		fmt.Println("Monitorando..")
+		iniciarMonitoramento()
 	case 2:
 		fmt.Println("Exibindo logs")
 	case 0:
@@ -38,13 +39,19 @@ func main() {
 	}
 
 }
+func devolveNomeEIdade() (string, int) {
+	nome := "Lobo"
+	idade := 28
+	return nome, idade
+}
+
 func exibeIntroducao() {
 	nome := "Yuri"
 	versao := 1.1
 
 	fmt.Println("Olá Sr.", nome)
 	fmt.Println("Estamos na versão: ", versao)
-	fmt.Println("Estamos usando o tipo : ", reflect.TypeOf(versao), " em versao")
+	fmt.Println("Estamos usando o tipo : ", versao, " em versao")
 
 }
 func exibeMenu() {
@@ -58,4 +65,11 @@ func lerComando() int {
 	fmt.Scan(&comandoLido)
 	fmt.Println("O comando escolhido foi ", comandoLido)
 	return comandoLido
+}
+
+func iniciarMonitoramento() {
+	fmt.Println("Monitorando..")
+	// site := "https://www.alura.com.br/"
+	// resp, _ := http.Get(site)
+
 }
