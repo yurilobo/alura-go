@@ -11,20 +11,9 @@ func main() {
 	exibeIntroducao()
 
 	exibeMenu()
-	// _, idade := devolveNomeEIdade()
-	// fmt.Println("e tenho", idade, "anos")
 
 	comando := lerComando()
 
-	// if comando == 1 {
-	// 	fmt.Println("Monitorando..")
-	// } else if comando == 2 {
-	// 	fmt.Println("Exibindo logs")
-	// } else if comando == 0 {
-	// 	fmt.Println("Saindo do programa")
-	// } else {
-	// 	fmt.Println("Não conheco este comando")
-	// }
 	switch comando {
 	case 1:
 		iniciarMonitoramento()
@@ -40,12 +29,6 @@ func main() {
 	}
 
 }
-
-// func devolveNomeEIdade() (string, int) {
-// 	nome := "Lobo"
-// 	idade := 28
-// 	return nome, idade
-// }
 
 func exibeIntroducao() {
 	nome := "Yuri"
@@ -71,7 +54,13 @@ func lerComando() int {
 
 func iniciarMonitoramento() {
 	fmt.Println("Monitorando..")
-	site := "https://www.alura.com.br/"
+	site := "https://random-status-code.herokuapp.com/"
 	resp, _ := http.Get(site)
-	fmt.Println(resp)
+
+	if resp.StatusCode == 200 {
+		fmt.Println("Site", site, "foi carregado com sucesso!")
+	} else {
+		fmt.Println("Site", site, "esta com problemas!", resp.StatusCode)
+	}
+
 }
