@@ -126,7 +126,8 @@ func lerSitesDoArquivo() []string {
 	return sites
 }
 func registraLog(site string, status bool) {
-	arquivo, err := os.Open("log.txt")
+
+	arquivo, err := os.OpenFile("log.txt", os.O_RDWR|os.O_CREATE, 0666)
 
 	if err != nil {
 		fmt.Println(err)
