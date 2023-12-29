@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"io"
+	"strconv"
 	"strings"
 
 	// "io/ioutil"
@@ -127,11 +128,13 @@ func lerSitesDoArquivo() []string {
 }
 func registraLog(site string, status bool) {
 
-	arquivo, err := os.OpenFile("log.txt", os.O_RDWR|os.O_CREATE, 0666)
+	arquivo, err := os.OpenFile("log.txt", os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
 
 	if err != nil {
 		fmt.Println(err)
 	}
 
-	fmt.Println(arquivo)
+	arquivo.WriteString(site + "=online" + strconv.FormatBool(status) + "\n")
+
+	arquivo.Close()
 }

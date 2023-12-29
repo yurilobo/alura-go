@@ -1,0 +1,5 @@
+https://www.casadocodigo.com.br=onlinetruenlinefalsesite-falso=onlinefalse
+https://random-status-code.herokuapp.com=onlinefalse
+https://www.alura.com.br=onlinetrue
+https://www.caelum.com.br=onlinetrue
+https://www.casadocodigo.com.br=onlinetrue
