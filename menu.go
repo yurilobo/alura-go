@@ -16,7 +16,11 @@ const monitoramentos = 3
 const delay = 50
 
 func main() {
+
 	exibeIntroducao()
+
+	registraLog("site-falso", false)
+
 	lerSitesDoArquivo()
 	for {
 
@@ -90,8 +94,10 @@ func testaSite(site string) {
 
 	if resp.StatusCode == 200 {
 		fmt.Println("Site:", site, "foi carregado com sucesso!")
+		registraLog(site, true)
 	} else {
 		fmt.Println("Site:", site, "está com problemas. Status Code:", resp.StatusCode)
+		registraLog(site, false)
 	}
 }
 
@@ -118,4 +124,13 @@ func lerSitesDoArquivo() []string {
 	arquivo.Close()
 
 	return sites
+}
+func registraLog(site string, status bool) {
+	arquivo, err := os.Open("log.txt")
+
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	fmt.Println(arquivo)
 }
