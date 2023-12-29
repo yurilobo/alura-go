@@ -1,5 +1,13 @@
-https://www.casadocodigo.com.br=onlinetruenlinefalsesite-falso=onlinefalse
-https://random-status-code.herokuapp.com=onlinefalse
-https://www.alura.com.br=onlinetrue
-https://www.caelum.com.br=onlinetrue
-https://www.casadocodigo.com.br=onlinetrue
+29/12/2023 15:18:24 - site-falso=onlinefalse
+29/12/2023 15:18:28 - https://random-status-code.herokuapp.com=onlinefalse
+29/12/2023 15:18:28 - https://www.alura.com.br=onlinetrue
+29/12/2023 15:18:29 - https://www.caelum.com.br=onlinetrue
+29/12/2023 15:18:29 - https://www.casadocodigo.com.br=onlinetrue
+29/12/2023 15:19:20 - https://random-status-code.herokuapp.com=onlinefalse
+29/12/2023 15:19:20 - https://www.alura.com.br=onlinetrue
+29/12/2023 15:19:21 - https://www.caelum.com.br=onlinetrue
+29/12/2023 15:19:22 - https://www.casadocodigo.com.br=onlinetrue
+29/12/2023 15:20:12 - https://random-status-code.herokuapp.com=onlinefalse
+29/12/2023 15:20:12 - https://www.alura.com.br=onlinetrue
+29/12/2023 15:20:14 - https://www.caelum.com.br=onlinetrue
+29/12/2023 15:20:14 - https://www.casadocodigo.com.br=onlinetrue
